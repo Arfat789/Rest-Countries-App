@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Josefin+Sans:wght@100;400&family=Kumbh+Sans&family=League+Spartan:wght@700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,600;0,6..12,800;1,6..12,300;1,6..12,600;1,6..12,800&family=Orbitron&family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,300&family=Raleway:wght@100&family=Roboto:ital,wght@0,400;1,700&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
 body{
     font-family: 'Barlow Semi Condensed', sans-serif;
 font-family: 'Josefin Sans', sans-serif;
@@ -9,17 +14,262 @@ font-family: 'Orbitron', sans-serif;
 font-family: 'Poppins', sans-serif;
 font-family: 'Raleway', sans-serif;
 font-family: 'Roboto', sans-serif;
+background-color: var(--main-bg-color);
 }
 
 :root {
     --primary-text-color:hsl(200, 15%, 8%);
     --main-bg-color:hsl(0, 0%, 98%);
     --white:hsl(0, 0%, 100%);
-    --secondory-bg-color:hsl(0, 0%, 98%);
+    --secondory-bg-color:hsl(0, 0%, 100%);
+    --margin-inline: 50px;
+    --primary-shadow:rgb(181, 179, 179);
   }
 
-  .dark-mode {
+  .dark {
     --secondory-bg-color:hsl(209, 23%, 22%);
     --main-bg-color:hsl(207, 26%, 17%);
-    --primary-text-color:hslhsl(0, 0%, 98%); 
+    --primary-text-color:hsl(0, 0%, 98%);
+    --primary-shadow:rgb(35, 34, 34);
   }
+
+  /* the following are usabilites classes */
+  h1{
+    font-size: 1.5rem;
+  }
+  img{
+    width :250px;
+    height: 150px;
+  }
+  .bold{
+    font-weight: bold;
+  }
+h1,h2,h2,h3,h4,p{
+  color: var(--primary-text-color);
+}
+button{
+  color: var(--primary-text-color);
+}
+input{
+  background-color: var(--secondory-bg-color);
+  color: var(--primary-text-color);
+}
+
+
+
+  /* the following code is for header */
+  header{
+    background-color: var(--secondory-bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0px 0px 50px ;
+  }
+
+  .dark-mode-btn{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: 0.1s linear;
+  }
+  .dark-mode-btn:hover{
+    transform: scale(1.1);
+  }
+
+  .dark-mode-btn button{
+    background-color: var(--secondory-bg-color);
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+  }
+
+
+
+
+  /* the follwing is for input and filter */
+
+  .search-filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-inline: var(--margin-inline);
+  }
+
+
+  .search-box{
+    background-color: var(--secondory-bg-color);
+    border-radius: 3px;
+    margin-top: 30px;
+    padding: 18px 150px 18px 20px;
+    box-shadow: 0px 0px 50px var(--primary-shadow);
+    gap: 10px;
+    max-height: min-content;
+    
+  }
+
+  .search-box input{
+    border: none;
+    
+  }
+  .search-box input:focus{
+    outline: none;
+  }
+
+
+  .filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: var(--secondory-bg-color);
+    border-radius: 3px;
+    margin-top: 30px;
+    padding: 18px 18px;
+    box-shadow: 0px 0px 50px var(--primary-shadow);
+  }
+  .regions{
+    flex-direction: column;
+    position: absolute;
+    z-index: 223;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: var(--secondory-bg-color);
+    border-radius: 3px;
+    margin-top: 10px;
+    padding: 18px 18px;
+    box-shadow: 0px 0px 50px var(--primary-shadow);
+  }
+  .regions.hide{
+    display: none;
+  }
+  .region{
+    cursor: pointer;
+  }
+  
+  .filter-box i {
+    cursor: pointer;
+
+  }
+
+
+
+
+
+
+  /* the follwing code is for country container & its boxes */
+
+  .country-container{
+     margin-top: 30px;
+     margin-inline: var(--margin-inline);
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     row-gap: 30px;
+
+  }
+  
+  .country-box{
+    background-color: var(--secondory-bg-color);
+    display: flex;
+    flex-direction: column;
+    z-index: 31;
+    gap: 10px;
+    box-shadow: 0px 0px 50px var(--primary-shadow);
+    transition: 0.1s linear;
+    cursor: pointer;
+    max-width: 250px;
+  }
+.country-box:hover{
+    transform: scale(1.1);
+}
+
+  .country-box h2{
+    margin: 10px 20px;
+  }
+
+  .country-box div{
+    margin: 0px 20px 10px 20px;
+  }
+
+
+
+
+
+  /* the following code is for the second page */
+
+  .second-page{
+    display: none;
+    position: none;
+    width: 100vw;
+    height: calc(100vh - 60px);
+    background-color: var(--main-bg-color);
+    /* z-index: 77; */
+    top: 60px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    padding-inline: var(--margin-inline);
+  }
+  .country-container{
+    display: flex;
+    background: none;
+  }
+
+  
+
+  .back-btn{
+    margin-top: 20px;
+    border: 1px solid var(--primary-text-color);
+    padding: 3px 10px;
+    transition: .1s linear;
+    cursor: pointer;
+
+  }
+  .back-btn:hover{
+    transform: scale(1.3);
+  }
+
+  .back-btn button{
+    background-color: var(--main-bg-color);
+    border: none;
+  }
+
+  .main-box{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    align-items: center;
+  }
+  .main-box img{
+  width: 500px;
+  height: 300px;
+  }
+  .upper-side{
+    display: flex;
+    gap: 50px;
+  }
+  .upper-side div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .lower-side{
+    margin-top: 40px;
+  }
+
+  .lower-side p span{
+    border: 1px solid var(--primary-text-color);
+    padding: 3px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+
+  

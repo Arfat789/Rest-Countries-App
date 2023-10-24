@@ -4,14 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countries Api</title>
-    <link rel="stylesheet" href="style-guide.md">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+<body onload="bindData()" class="">
     <header>
         <h1>Where in the world?</h1>
         <div class="dark-mode-btn">
-            
+            <i class="fa-regular fa-moon"></i>
+            <button>Dark Mode</button>
         </div>
     </header>
+
+    <main>
+    <section class="search-filter">
+        <div class="search-box">
+            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search for a country..." >
+        </div>
+        <div class="filter-box">
+            <div class="filter">
+                <p>Filter by Region</p>
+                <i id=""  class="icon fa-solid fa-caret-down  open-region"></i>
+            </div>
+            <div class="regions hide">
+                <p class="region">Africa</p>
+                <p class="region">Americas</p>
+                <p class="region">Asia</p>
+                <p class="region">Europe</p>
+                <p class="region">Oceania</p>
+                <p class="region">All</p>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <div>
+        <div class="country-container">
+            
+
+        </div>
+        
+    </div>
+    </main>
+
+
+    
+
+
+
+
+    <script src="script.js"></script>
 </body>
 </html>
