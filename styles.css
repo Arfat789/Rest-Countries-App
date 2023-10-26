@@ -47,6 +47,11 @@ background-color: var(--main-bg-color);
 h1,h2,h2,h3,h4,p{
   color: var(--primary-text-color);
 }
+.gap{
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+}
 button{
   color: var(--primary-text-color);
 }

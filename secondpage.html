@@ -110,27 +110,27 @@
         document.querySelector('.l').innerHTML = `<span class="bold">Languages: </span>${languageHTML.join(', ')} `;
         
         lowerSide.innerHTML = `
-        <p><span style="border: none;" class="bold">Borders: ${borderHTML}  </p>
+        <p><span style="border: none;" class="bold gap">Borders: ${borderHTML}  </p>
 
         `;
+        const borderBtn = lowerSide.querySelector('p').querySelector('span').querySelectorAll('span')
+        
+        borderBtn.forEach(element => {
+            element.addEventListener('click',()=>{
+                let newCountry = mainList.filter(mulk => mulk.name.common === element.textContent)
+                localStorage.setItem('myData', `${newCountry[0].name.common}`);
+                location.reload();
+                
+            })
+        });
+    
         
 
         
 
     }
 
-    const borderBtn = lowerSide.querySelector('p').querySelector('span').querySelectorAll('span')
         
-        borderBtn.forEach(element => {
-            element.addEventListener('click',()=>{
-                let newCountry = mainList.filter(mulk => mulk.name.common === element.textContent)
-                console.log(country[0])
-                country[0] = newCountry;
-                console.log(country[0][0])
-                bindData()
-            })
-        });
-    
    
 
     
