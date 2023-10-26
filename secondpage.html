@@ -3,7 +3,7 @@
    <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="dark secondBody">
+<body class="dark secondBody" onload="bindData()">
     <div class="second-page">
         <div class="back-btn">
             <i class="fa-solid fa-arrow-left"></i>
@@ -17,29 +17,123 @@
                 <div class="upper-side">
                     <div class="upper-left">
                         <h2>Belgium</h2>
-                        <p><span class="bold">Native Language: </span>Belgi</p>
-                        <p><span class="bold">Populaton: </span>79879</p>
-                        <p><span class="bold">Region: </span>Europe</p>
-                        <p><span class="bold">Sub Region: </span>Western Europe</p>
-                        <p><span class="bold">Capital: </span>no se</p>
+                        <p  class='nl'  ><span class="bold">Native Language: </span>Belgi</p>
+                        <p class="pl"><span class="bold">Populaton: </span>79879</p>
+                        <p class="rg"><span class="bold">Region: </span>Europe</p>
+                        <p class="srg"><span class="bold">Sub Region: </span>Western Europe</p>
+                        <p class="cp"><span class="bold">Capital: </span>no se</p>
                 
                     </div>
                     <div class="upper-right">
-                        <p><span class="bold">Top Level Domain: </span>.be</p>
-                        <p><span class="bold">Currencies: </span>Euro</p>
-                        <p><span class="bold">Languages: </span>no</p>
+                        <p class="tld"><span class="bold">Top Level Domain: </span>.be</p>
+                        <p class="cr"><span class="bold">Currencies: </span>Euro</p>
+                        <p class="l"><span class="bold">Languages: </span>no</p>
                     </div>
                 </div>
                 <div class="lower-side">
-                    <p><span style="border: none;" class="bold">Languages: </span><span>France</span class>   <span>Aku</span>   <span>pak</span></p>
+                    <p><span style="border: none;" class="bold">Borders: </span><span>France</span class>   <span>Aku</span>   <span>pak</span></p>
                 </div>
             </right-side>
         </div>
 
     </div>
+
+
+
     <script>
+    const lowerSide = document.querySelector('.lower-side')
     const data = localStorage.getItem('myData');
-console.log(data);
+    
+    const api = 'https://restcountries.com/v3.1/all';
+
+
+    async function  fetchData (){
+        const data = await fetch(api)
+        const mainData = await data.json()
+        return mainData;
+    }
+
+
+  
+    async function bindData(){
+        const fetchedData = await fetchData()
+        let mainList = []
+        for(item of fetchedData){//this is to put the into the array named data
+        mainList.push(item)
+        }
+        let country = mainList.filter(mulk=>{
+        return mulk.name.common === data;
+        })
+
+
+
+        let idiomas = []
+        
+        for (const key in country[0].languages) {
+        idiomas.push(country[0].languages[key]);
+        }
+
+
+        let curruneslist = []
+        let borderList = []
+        let realBorder = []
+       
+        
+        for (const key in country[0].borders) {
+        borderList.push(country[0].borders[key]);
+        }
+        for(i in borderList){
+            realBorder.push(
+                mainList.filter(mulk => mulk.cca3 === borderList[i])[0].name.common
+            )
+        }
+        
+        
+        for (const key in country[0].currencies) {
+        curruneslist.push(country[0].currencies[key]);
+        }
+
+        
+        
+        const languageHTML = idiomas.map(language => `<span>${language}</span>`);
+        const borderHTML = realBorder.map(border => `<span class="borderBtn">${border}</span>`);
+        
+        document.querySelector('img').src = country[0].flags.svg
+        document.querySelector('h2').textContent = country[0].name.common
+        document.querySelector('.nl').innerHTML = `<span class="bold">Native Language: </span>${idiomas[0]}`;
+        document.querySelector('.pl').innerHTML = `<span class="bold">Population: </span>${country[0].population}`;
+        document.querySelector('.rg').innerHTML = `<span class="bold">Region: </span>${country[0].region}`;
+        document.querySelector('.srg').innerHTML = `<span class="bold">Sub Region: </span>${country[0].subregion}`;
+        document.querySelector('.cp').innerHTML = `<span class="bold">Capital: </span>${country[0].capital}`;
+        document.querySelector('.tld').innerHTML = `<span class="bold">Top Level Domain: </span>${country[0].tld}`;
+        document.querySelector('.cr').innerHTML = `<span class="bold">Curruncies: </span>${curruneslist[0].name} `;
+        document.querySelector('.l').innerHTML = `<span class="bold">Languages: </span>${languageHTML.join(', ')} `;
+        
+        lowerSide.innerHTML = `
+        <p><span style="border: none;" class="bold">Borders: ${borderHTML}  </p>
+
+        `;
+        
+
+        
+
+    }
+
+    const borderBtn = lowerSide.querySelector('p').querySelector('span').querySelectorAll('span')
+        
+        borderBtn.forEach(element => {
+            element.addEventListener('click',()=>{
+                let newCountry = mainList.filter(mulk => mulk.name.common === element.textContent)
+                console.log(country[0])
+                country[0] = newCountry;
+                console.log(country[0][0])
+                bindData()
+            })
+        });
+    
+   
+
+    
 
 
 

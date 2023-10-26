@@ -116,7 +116,7 @@ async function switchScreen(box){
 
 box.addEventListener('click', async ()=>{
 
-   console.log(box)
+  
 
     const fetchedData = await fetchData()
     let data = []
@@ -125,16 +125,16 @@ box.addEventListener('click', async ()=>{
     for(item of fetchedData){//this is to put the into the array named data
         data.push(item)
     }
+    const country = box.querySelector('h2').textContent
+   
 
-    const country = data.filter(mulk=>{
-        return mulk.name.common === box.querySelector('h2').textContent;
-    })
 
-    console.log(country)
-
-    window.location.href = 'secondpage.html';
-    console.log(document.querySelector('.secondBody'))
-    localStorage.setItem('myData', country.name.common.toString());
+    setTimeout(() => {
+        window.location.href = 'secondpage.html';
+        console.log(document.querySelector('.secondBody'))
+        localStorage.setItem('myData', `${country}`);
+    }, 1);
+   
   
 })
 }
