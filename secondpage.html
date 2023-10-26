@@ -3,7 +3,14 @@
    <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="dark secondBody" onload="bindData()">
+<body class=" secondBody" onload="bindData()">
+    <header>
+        <h1>Where in the world?</h1>
+        <div class="dark-mode-btn">
+            <i class="fa-regular fa-moon"></i>
+            <button>Dark Mode</button>
+        </div>
+    </header>
     <div class="second-page">
         <div class="back-btn">
             <i class="fa-solid fa-arrow-left"></i>
@@ -110,7 +117,7 @@
         document.querySelector('.l').innerHTML = `<span class="bold">Languages: </span>${languageHTML.join(', ')} `;
         
         lowerSide.innerHTML = `
-        <p><span style="border: none;" class="bold gap">Borders: ${borderHTML}  </p>
+        <p><span style="border: none;" class="bold gap">Borders: ${borderHTML.join('')}  </p>
 
         `;
         const borderBtn = lowerSide.querySelector('p').querySelector('span').querySelectorAll('span')
@@ -134,7 +141,9 @@
    
 
     
-
+    document.querySelector('.dark-mode-btn').addEventListener('click',()=>{
+    document.querySelector('body').classList.toggle('dark')
+    })
 
 
     document.querySelector('.back-btn').addEventListener('click',()=>{

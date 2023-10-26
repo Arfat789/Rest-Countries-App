@@ -2,6 +2,7 @@ const api = 'https://restcountries.com/v3.1/all';
 const mainContainer = document.querySelector('.country-container')
 const openRegion = document.querySelector('.open-region')
 const input = document.querySelector('input')
+const rgnText = document.querySelector('.rgn-text')
 
  async function  fetchData (){
     const data = await fetch(api)
@@ -91,6 +92,7 @@ const theRegion = document.querySelectorAll('.region')
 theRegion.forEach(item =>{
     item.addEventListener('click',()=>{
         selectedRegion = item.textContent
+        rgnText.textContent = item.textContent;
         bindData()
     })
 })
