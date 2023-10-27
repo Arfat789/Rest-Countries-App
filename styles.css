@@ -210,23 +210,19 @@ input{
   /* the following code is for the second page */
 
   .second-page{
-    display: none;
-    position: none;
+    /* display: none; */
+    /* position: none; */
     width: 100vw;
     height: calc(100vh - 60px);
     background-color: var(--main-bg-color);
     /* z-index: 77; */
-    top: 60px;
+    /* top: 60px; */
     display: flex;
     align-items: start;
     flex-direction: column;
     padding-inline: var(--margin-inline);
   }
-  .country-container{
-    display: flex;
-    background: none;
-  }
-
+ 
   
 
   .back-btn{
