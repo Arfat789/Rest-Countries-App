@@ -1,0 +1,110 @@
+@media only screen and (max-width: 650px) {
+
+
+      /* the following code is for header */
+  header{
+    background-color: var(--secondory-bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0px 0px 50px ;
+    width: 100%;
+  }
+    :root {
+        --primary-text-color:hsl(200, 15%, 8%);
+        --main-bg-color:hsl(0, 0%, 98%);
+        --white:hsl(0, 0%, 100%);
+        --secondory-bg-color:hsl(0, 0%, 100%);
+        --margin-inline: 50px;
+        --primary-shadow:rgb(181, 179, 179);
+      }
+
+      h1{
+        font-size: 1.5rem;
+      }
+      .search-box{
+        background-color: var(--secondory-bg-color);
+        border-radius: 3px;
+        margin-top: 30px;
+        padding: 18px 80px 18px 20px;
+        box-shadow: 0px 0px 50px var(--primary-shadow);
+        gap: 10px;
+        max-height: min-content;
+        
+      }
+
+
+    .search-filter {
+     display: flex;
+     flex-direction: column;
+    }
+    img{
+        width :250px;
+        height: 150px;
+      }
+    
+    
+  }
+
+
+
+  @media only screen and (max-width: 320px) {
+
+    :root {
+        --primary-text-color:hsl(200, 15%, 8%);
+        --main-bg-color:hsl(0, 0%, 98%);
+        --white:hsl(0, 0%, 100%);
+        --secondory-bg-color:hsl(0, 0%, 100%);
+        --margin-inline: 10px;
+        --primary-shadow:rgb(181, 179, 179);
+      }
+
+      h1{
+        font-size: 1rem;
+      }
+      .search-box{
+        background-color: var(--secondory-bg-color);
+        border-radius: 3px;
+        margin-top: 30px;
+        padding: 18px 50px 18px 20px;
+        box-shadow: 0px 0px 50px var(--primary-shadow);
+        gap: 10px;
+        max-height: min-content;
+        
+      }
+
+
+    
+  }
+
+
+
+  @media only screen and (max-width: 320px) {
+
+    :root {
+        --primary-text-color:hsl(200, 15%, 8%);
+        --main-bg-color:hsl(0, 0%, 98%);
+        --white:hsl(0, 0%, 100%);
+        --secondory-bg-color:hsl(0, 0%, 100%);
+        --margin-inline: 10px;
+        --primary-shadow:rgb(181, 179, 179);
+      }
+
+      h1{
+        font-size: 1rem;
+      }
+      .search-box{
+        background-color: var(--secondory-bg-color);
+        border-radius: 3px;
+        margin-top: 30px;
+        padding: 18px 50px 18px 20px;
+        box-shadow: 0px 0px 50px var(--primary-shadow);
+        gap: 10px;
+        max-height: min-content;
+        
+      }
+
+
+    
+  }
