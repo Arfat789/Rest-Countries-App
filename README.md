@@ -21,8 +21,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Arfat789/Rest-Countries-App)
-- Live Site URL: [Add live site URL here](https://euphonious-griffin-e9fdbe.netlify.app/)
+- Solution URL: (https://github.com/Arfat789/Rest-Countries-App)
+- Live Site URL: (https://euphonious-griffin-e9fdbe.netlify.app/)
 
 
 
